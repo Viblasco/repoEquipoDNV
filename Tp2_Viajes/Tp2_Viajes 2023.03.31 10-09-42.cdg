@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tp2_Viajes">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="entidades" visibility="public" xPosition="68.0" yPosition="351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="void" visibility="public">
+          <Argument type="double" name="km"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Camion" package="entidades" visibility="public" xPosition="361.0" yPosition="351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="void" visibility="public">
+          <Argument type="double" name="km"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Camioneta" package="entidades" visibility="public" xPosition="648.0" yPosition="351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="void" visibility="public">
+          <Argument type="double" name="km"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ciudad" package="entidades" visibility="public" xPosition="1015.0" yPosition="367.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="km" type="double" visibility="private"/>
+        <Field name="ruta" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Combustible" package="entidades" visibility="public" xPosition="601.0" yPosition="1.0">
+      <Fields>
+        <Field name="tipoCombustible" type="String" visibility="private"/>
+        <Field name="Precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Vehiculo" package="entidades" visibility="public" isAbstract="true" xPosition="293.0" yPosition="86.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="protected"/>
+        <Field name="Patente" type="String" visibility="protected"/>
+        <Field name="combustible" type="Combustible" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularCostoCombustible" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="double" name="km"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Viaje" package="entidades" visibility="public" xPosition="808.0" yPosition="20.0">
+      <Fields>
+        <Field name="origen" type="Ciudad" visibility="private"/>
+        <Field name="destino" type="Ciudad" visibility="private"/>
+        <Field name="distancia" type="double" visibility="private"/>
+        <Field name="vehiculo" type="Vehiculo" visibility="private"/>
+        <Field name="peajes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Ciudad" name="origen"/>
+          <Argument type="Ciudad" name="destino"/>
+          <Argument type="double" name="distancia"/>
+          <Argument type="Vehiculo" name="vehiculo"/>
+          <Argument type="int" name="Peaje"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularDistancia" returnType="double" visibility="public"/>
+        <Method name="calcularCostoPeaje" returnType="double" visibility="public"/>
+        <Method name="calcularCostoCombustible" returnType="double" visibility="public"/>
+        <Method name="calcularCostoTotal" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tp2_Viajes" package="laboratorio.tp2_viajes" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="entidades.Camioneta" target="entidades.Vehiculo"/>
+    <HasRelation name="vehiculo" source="entidades.Viaje" target="entidades.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="entidades.Camion" target="entidades.Vehiculo"/>
+    <IsRelation name="is" source="entidades.Auto" target="entidades.Vehiculo"/>
+    <HasRelation name="combustible" source="entidades.Vehiculo" target="entidades.Combustible" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="destino" source="entidades.Viaje" target="entidades.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="origen" source="entidades.Viaje" target="entidades.Ciudad" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
