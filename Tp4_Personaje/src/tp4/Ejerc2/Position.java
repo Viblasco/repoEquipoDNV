@@ -1,11 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp4.Ejerc2;
 
-
-package entidades;
-
-//@authores Daniel Becerra-Nicolas Araujo- Viviana Blasco
-
+/**
+ *
+ * @author becer
+ */
 public class Position {
- private int x;
+    private int x;
  private int y;
  
     public Position(int x, int y) {
@@ -30,4 +34,5 @@ public class Position {
  
  
  
+
 }

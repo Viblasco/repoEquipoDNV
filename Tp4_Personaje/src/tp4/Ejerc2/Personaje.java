@@ -1,11 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp4.Ejerc2;
 
-
-package entidades;
-
-//@authora -Viviana Blasco 
+/**
+ *
+ * @author becer
+ */
 public class Personaje {
-    
-    protected Position ubicacion;
+     protected Position ubicacion;
 
     protected String nick;
 
@@ -87,5 +91,4 @@ public class Personaje {
     public char getOrientacion() {
         return orientacion;
     }
- }
-
+}
